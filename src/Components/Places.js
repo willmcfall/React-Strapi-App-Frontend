@@ -1,5 +1,6 @@
 import React from "react";
 import Iframe from "react-iframe";
+import Map from "./Map";
 
 const Places = ({ places }) => {
   return (
@@ -7,6 +8,9 @@ const Places = ({ places }) => {
       <center>
         <h1>Places List</h1>
       </center>
+      <div>
+        <Map />
+      </div>
       {places.map(place => (
         <div className="card">
           <div className="card-body">
@@ -21,10 +25,8 @@ const Places = ({ places }) => {
                 width="600px"
                 height="450px"
                 frameborder="0px"
-                style="border:0"
                 allowfullscreen=""
               />
-
             </p>
           </div>
         </div>

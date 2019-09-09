@@ -15,7 +15,7 @@ class App extends Component {
     })
     .catch(console.log)
   }
-
+  
   render() {
     return (
       <div class="card">
@@ -28,3 +28,11 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+
