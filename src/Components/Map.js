@@ -102,18 +102,19 @@ function Map({ markersData }) {
     markersData.forEach(marker => {
       L.marker([marker.Latitude, marker.Longitude]).addTo(layerRef.current).bindPopup(
         "<h3>" + marker.Name + "</h2>" +
-        "<iframe src='" + marker["Photo-360-URL"] + "' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen=''></iframe>" +
+        "<iframe src='" + marker["Photo-360-URL"] + "' width='900' height='600' frameborder='0' style='border:0;' allowfullscreen=''></iframe>" +
         "<p> Location:<br>" + marker.Barangay + "," + marker.Municipality + "</p>" +
-        "<p> Description:<br>" + marker.Description + "</p"
+        "<p> Description:<br>" + marker.Description + "</p>" +
+        "<p> Directions:<br>" + marker.Directions + "</p>"
         , {
           maxWidth: "auto"
-        }).openPopup();
+        });
     });
   }, [markersData]);
   return (
     <div>
       <div className="Map_Container">
-        <Wrapper width="1400px" height="1400px" id="map"></Wrapper>
+        <Wrapper width="1620px" height="980px" id="map"></Wrapper>
       </div>
     </div>
   );

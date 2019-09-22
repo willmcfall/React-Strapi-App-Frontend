@@ -6,12 +6,12 @@ const Places = ({ places }) => {
   return (
     <div>
       <center>
-        <h1>Places List</h1>
+        <h1>Visit Region 8</h1>
         <div>
-            <Map markersData={places}/>
-          </div>
+          <Map markersData={places} />
+        </div>
       </center>
-      {places.map(place => (
+      {/* /* {places.map(place => (
         <div>
           <div className="card">
             <div className="card-body">
@@ -31,8 +31,7 @@ const Places = ({ places }) => {
               </p>
             </div>
           </div>
-        </div>
-      ))}
+        </div> */}
     </div>
   );
 };
