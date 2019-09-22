@@ -60,9 +60,10 @@ delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    iconUrl: require('../../src/Components/circle-solid.svg'),
     shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 })
+
 
 function Map({ markersData }) {
   console.log(markersData);
@@ -99,9 +100,7 @@ function Map({ markersData }) {
   useEffect(() => {
     layerRef.current.clearLayers();
     markersData.forEach(marker => {
-      L.marker([marker.Latitude, marker.Longitude], {
-        title: marker.Name
-      }).addTo(layerRef.current);
+      L.marker([marker.Latitude, marker.Longitude]).addTo(layerRef.current);
     });
   }, [markersData]);
   return (
