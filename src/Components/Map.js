@@ -100,7 +100,14 @@ function Map({ markersData }) {
   useEffect(() => {
     layerRef.current.clearLayers();
     markersData.forEach(marker => {
-      L.marker([marker.Latitude, marker.Longitude]).addTo(layerRef.current);
+      L.marker([marker.Latitude, marker.Longitude]).addTo(layerRef.current).bindPopup(
+        "<h3>" + marker.Name + "</h2>" +
+        "<iframe src='" + marker["Photo-360-URL"] + "' width='600' height='450' frameborder='0' style='border:0;' allowfullscreen=''></iframe>" +
+        "<p> Location:<br>" + marker.Barangay + "," + marker.Municipality + "</p>" +
+        "<p> Description:<br>" + marker.Description + "</p"
+        , {
+          maxWidth: "auto"
+        }).openPopup();
     });
   }, [markersData]);
   return (
