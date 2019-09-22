@@ -18,8 +18,8 @@ class App extends Component {
   
   render() {
     return (
-      <div class="card">
-        <div class="card-body">
+      <div className="card">
+        <div className="card-body">
         <Places places={this.state.places} />
         </div>
       </div>

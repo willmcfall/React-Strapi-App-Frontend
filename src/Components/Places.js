@@ -8,8 +8,8 @@ const Places = ({ places }) => {
       <center>
         <h1>Places List</h1>
         <div>
-        <Map/>
-        </div>
+            <Map markersData={places}/>
+          </div>
       </center>
       {places.map(place => (
         <div>
